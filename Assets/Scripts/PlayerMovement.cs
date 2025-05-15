@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float jumpForce = 6.0f;
+    [SerializeField] private float jumpForce = 20.0f;
     private bool isGrounded;
 
     private void Start()
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) == true)
         {
-            rb.velocity = Vector2.up * 0.8f * jumpForce;
+            rb.velocity = Vector2.up * jumpForce;
         }
     }
 
