@@ -4,8 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float jumpForce = 20.0f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
     private bool isGrounded;
 
     private void Start()
