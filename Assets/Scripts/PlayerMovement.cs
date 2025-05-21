@@ -1,5 +1,6 @@
 using UnityEngine;
 
+    //Top of UML
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     private bool isGrounded;
+
+    //below is all methods
 
     private void Start()
     {
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
+
 	}
 
 	private void OnCollisionExit2D(Collision2D collision)
