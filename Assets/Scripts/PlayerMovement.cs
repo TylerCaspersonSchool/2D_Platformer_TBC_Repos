@@ -26,9 +26,16 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
         }
 
+        /*
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) == true)
         {
             rb.velocity = Vector2.up * jumpForce;
+        }
+        */
+
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
