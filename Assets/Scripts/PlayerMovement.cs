@@ -1,5 +1,6 @@
 using UnityEngine;
 
+    //Top of UML
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -7,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     private bool isGrounded;
+
+    //below is all methods
 
     private void Start()
     {
@@ -26,9 +29,16 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
         }
 
+        /*
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) == true)
         {
             rb.velocity = Vector2.up * jumpForce;
+        }
+        */
+
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -38,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
+
 	}
 
 	private void OnCollisionExit2D(Collision2D collision)
